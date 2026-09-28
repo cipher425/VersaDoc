@@ -1,0 +1,21 @@
+{
+  "name": "versadoc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VersaDoc - Git-style version control for documents (MERN): branches, diffs, three-way merge, reviews.",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "seed": "npm run seed -w server -- --reset",
+    "test": "npm test -w server",
+    "bench": "npm run bench -w server",
+    "build": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "license": "MIT"
+}
